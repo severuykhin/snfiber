@@ -30,6 +30,14 @@ func (r *Router) Get(path path, handler requestHandler) *Route {
 	return r.Add(http.MethodGet, path, handler)
 }
 
+func (r *Router) Patch(path path, handler requestHandler) *Route {
+	return r.Add(http.MethodPost, path, handler)
+}
+
+func (r *Router) Delete(path path, handler requestHandler) *Route {
+	return r.Add(http.MethodGet, path, handler)
+}
+
 func (r *Router) Add(method string, path path, handler requestHandler) *Route {
 	route := Route{
 		Method:  method,
