@@ -31,11 +31,11 @@ func (r *Router) Get(path path, handler requestHandler) *Route {
 }
 
 func (r *Router) Patch(path path, handler requestHandler) *Route {
-	return r.Add(http.MethodPost, path, handler)
+	return r.Add(http.MethodPatch, path, handler)
 }
 
 func (r *Router) Delete(path path, handler requestHandler) *Route {
-	return r.Add(http.MethodGet, path, handler)
+	return r.Add(http.MethodDelete, path, handler)
 }
 
 func (r *Router) Add(method string, path path, handler requestHandler) *Route {
