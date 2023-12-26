@@ -43,6 +43,9 @@ func (h *handler) handleError(c *fiber.Ctx, err error) error {
 	case errKind == goerrors.ErrBadRequest:
 		statusCode = http.StatusBadRequest
 		message = appErr.GetMessage()
+	case errKind == goerrors.ErrNotFound:
+		statusCode = http.StatusNotFound
+		message = appErr.GetMessage()
 	default:
 		statusCode = http.StatusInternalServerError
 		message = "internal server error"
