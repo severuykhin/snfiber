@@ -36,8 +36,8 @@ github.com/prometheus/procfs v0.11.1 h1:xRC8Iq1yyca5ypa9n1EZnWZkt7dwcoRPQwX/5gwa
 github.com/prometheus/procfs v0.11.1/go.mod h1:eesXgaPo1q7lBpVMoMy0ZOFTth9hBn4W/y0/p/ScXhY=
 github.com/rivo/uniseg v0.2.0 h1:S1pD9weZBuJdFmowNwbpi7BJ8TNftyUImj/0WQi72jY=
 github.com/rivo/uniseg v0.2.0/go.mod h1:J6wj4VEh+S6ZtnVlnTBMWIodfgj8LQOQFoIToxlJtxc=
-github.com/severuykhin/goerrors v0.0.3 h1:gvxm3636T3Ng5XEn2zw08Bh/KNjkP7Qi5nTJof/Bn+U=
-github.com/severuykhin/goerrors v0.0.3/go.mod h1:+8r/QY7lTToKEMuLejO2ga9Pd5cpxgM2Q4S8UMSnSYw=
+github.com/severuykhin/goerrors v0.0.4 h1:IgBgq2UnBGdVenKZw5YLyps3Gl3bF6b5IthUGEmPhNo=
+github.com/severuykhin/goerrors v0.0.4/go.mod h1:+8r/QY7lTToKEMuLejO2ga9Pd5cpxgM2Q4S8UMSnSYw=
 github.com/severuykhin/gostacktrace v0.0.1 h1:CwBIrrAgbek+pU5wCcqPYxUFEMdAZPft8wpJUEcu1OI=
 github.com/severuykhin/gostacktrace v0.0.1/go.mod h1:f45CM7qlbN7xpZtxoMgvknP3r29dzZuKUiF6aIEoFAg=
 github.com/severuykhin/logfmt/v4 v4.3.0 h1:GfN/mCPeYpFSNWE1R6HnJWPLNDs6NOwoDwhg/9DVMmk=
