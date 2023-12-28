@@ -57,7 +57,16 @@ func NewServer(
 	handler.logger = logger
 
 	for _, route := range router.routes {
-		app.Add(route.Method, string(route.Path), handler.handle(route.Handler))
+
+		var fiberHandlers []func(c *fiber.Ctx) error
+		if len(route.Middlewares) > 0 {
+			for _, middleware := range route.Middlewares {
+				fiberHandlers = append(fiberHandlers, handler.handle(middleware, true))
+			}
+		}
+		fiberHandlers = append(fiberHandlers, handler.handle(route.Handler, false))
+
+		app.Add(route.Method, string(route.Path), fiberHandlers...)
 	}
 
 	return app
