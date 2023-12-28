@@ -16,7 +16,7 @@ type handler struct {
 
 type requestHandler func(req *Request) (interface{}, error)
 
-func (h *handler) handle(handlerFunc requestHandler) func(c *fiber.Ctx) error {
+func (h *handler) handle(handlerFunc requestHandler, isMiddleWare bool) func(c *fiber.Ctx) error {
 	return func(c *fiber.Ctx) error {
 		req := Request{
 			Ctx: c,
@@ -25,6 +25,11 @@ func (h *handler) handle(handlerFunc requestHandler) func(c *fiber.Ctx) error {
 		if err != nil {
 			return h.handleError(c, err)
 		}
+
+		if res == nil && isMiddleWare {
+			return c.Next()
+		}
+
 		return Send(c, http.StatusOK, res)
 	}
 }
