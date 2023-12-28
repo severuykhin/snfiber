@@ -42,15 +42,15 @@ func (h *handler) handleError(c *fiber.Ctx, err error) error {
 	errId := uuid.NewString()
 
 	var statusCode int
-	var message string
+	message := appErr.GetMessage()
 
 	switch {
 	case errKind == goerrors.ErrBadRequest:
 		statusCode = http.StatusBadRequest
-		message = appErr.GetMessage()
 	case errKind == goerrors.ErrNotFound:
 		statusCode = http.StatusNotFound
-		message = appErr.GetMessage()
+	case errKind == goerrors.ErrAccessDenied:
+		statusCode = http.StatusForbidden
 	default:
 		statusCode = http.StatusInternalServerError
 		message = "internal server error"
